@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+<div style="position: relative;">
+		<h3>Search: </h3>
+		{% csrf_token %}
+		<form action="/search" method="get">
+		<input type="text" name="q">
+		<ul id="search-results">
+		
+		</ul>
+
+	</ul>
+{% for post in object_list %}
+<div class="{{post.categories}}">
+<div class="mainContent">
+	
+		<div class="content">
+			<article  class="typicalArticle">
+			
+				<div>
+				<header>
+					
+					<h3><a href="{{post.url}}">{{ post.title }}</a></h3>
+				</header>
+	
+				<content>
+					<p>	{{ post.body|safe|linebreaks}} 
+						</p>
+			</article>
+			</div>
+		</div>
+	</div>
+</div>
+{% endfor %}
+{% endblock %}
+

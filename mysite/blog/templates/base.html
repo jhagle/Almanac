@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>HERE Platform Almanac</title>
+	<meta charset="utf-8" />
+
+	<link rel="stylesheet" href="/static/css/styles.css" type = "text/css"/>
+	<meta name="viewport content = "width-device-width, initial-scale=1.0">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	
+	
+	
+
+</head>
+
+<body class="body">
+
+</form>
+	<header class="mainHead">
+		<img src="/static/img/mainlogo.png" height="144">
+			<h1>Platform Support Almanac</h1>
+		<nav><ul>
+			<li><a href='/'>Home</a></li>
+			<li><a href='/blog/latestnews/'>Recently Updated</a></li>
+			
+			<li><a href="#" id="API">Filter API</a></li>
+			<li><a href="#" id="SUP">Filter SUPPORT</a></li>
+			<li><a href="#" id="TRA">Filter TRAINING</a></li>
+			<li><a href="#" id="SDK">Filter SDK</a></li>
+			<li><a href="#" id="RDM">Filter ROADMAP</a></li>
+			<li><a href="#" id="JIR">Filter JIRA</a></li>
+			<li><a href="#" id="PRO">Filter PROCESSES</a></li>
+			<li><a href="#" id="USE">Filter USECASE</a></li>
+
+			
+		</ul></nav>
+	</header>
+	<div style="position: relative;">
+		<h3>Search: </h3>
+		{% csrf_token %}
+		<form action="/search" method="get">
+		<input type="text" name="q">
+		<ul id="search-results">
+		
+		</ul>
+
+	</ul>
+	
+{% block content %}
+{% endblock %}	
+
+	</body>
+	
+	
+	<script>
+		var apDivsToHide = document.getElementsByClassName("AP");
+		
+		
+var AP;
+
+  $("#API").click(function(){
+	if (AP) {
+		AP.appendTo("body");
+		AP = null;
+	}else{
+		AP = $(".AP").detach();
+	}
+  });
+  
+  var SP;
+
+  $("#SUP").click(function(){
+	if (SP) {
+		SP.appendTo("body");
+		SP = null;
+	}else{
+		SP = $(".SP").detach();
+	}
+  });
+
+ 
+  var TR;
+
+  $("#TRA").click(function(){
+	if (TR) {
+		TR.appendTo("body");
+		TR = null;
+	}else{
+		TR = $(".TR").detach();
+	}
+  });
+  
+  var SD;
+
+  $("#SDK").click(function(){
+	if (SD) {
+		SD.appendTo("body");
+		SD = null;
+	}else{
+		SD = $(".SD").detach();
+	}
+  });
+		
+  var RD;
+
+  $("#RDM").click(function(){
+	if (RD) {
+		RD.appendTo("body");
+		RD = null;
+	}else{
+		RD = $(".RM").detach();
+	}
+  });
+  
+    var JR;
+
+  $("#JIR").click(function(){
+	if (JR) {
+		JR.appendTo("body");
+		JR = null;
+	}else{
+		JR = $(".JR").detach();
+	}
+  });
+  
+      var PR;
+
+  $("#PRO").click(function(){
+	if (PR) {
+		PR.appendTo("body");
+		PR = null;
+	}else{
+		PR = $(".PR").detach();
+	}
+  });
+  
+        var US;
+
+  $("#USE").click(function(){
+	if (US) {
+		US.appendTo("body");
+		US = null;
+	}else{
+		US = $(".UC").detach();
+	}
+  });
+	</script>
+
+
+	
+
+</html>

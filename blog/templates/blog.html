@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% for post in object_list %}
+<div class="{{post.categories}}">
+<div class="mainContent">
+	
+		<div class="content">
+			<article  class="typicalArticle">
+			
+				<div>
+				<header>
+					
+					<h3><a href="{{post.url}}">{{ post.title }}</a></h3>
+				</header>
+	
+				<content>
+					<p>	{{ post.body|safe|linebreaks}} 
+						</p>
+			</article>
+			</div>
+		</div>
+	</div>
+</div>
+{% endfor %}
+{% endblock %}
+
